@@ -26,21 +26,21 @@ fn main() {
             year = input.trim().parse().unwrap();
 
             // Get the month
-            print!("Ah so we are time travelling to {}! But like what month?                 ", year);
+            print!("Ah so we are time travelling to {}! But like what month?              ", year);
             io::stdout().flush().unwrap();
             let mut input = String::new();
             io::stdin().read_line(&mut input).unwrap();
             month = input.trim().parse().unwrap();
 
             // Get the day
-            print!("Really? Month {} of {}? Alright but be more specific - what day?          ", month, year);
+            print!("Really? Month {} of {}? Alright but be more specific - what day?       ", month, year);
             io::stdout().flush().unwrap();
             let mut input = String::new();
             io::stdin().read_line(&mut input).unwrap();
             day = input.trim().parse().unwrap();
 
             // Funni message to confirm all the inputs
-            print!("Alright, we will go to {}-{}-{}. Is this correct? Y/n                      ", day, month, year);
+            print!("Alright, we will go to {}-{}-{}. Is this correct? Y/n                   ", day, month, year);
             io::stdout().flush().unwrap();
             let mut input = String::new();
             io::stdin().read_line(&mut input).unwrap();
@@ -54,15 +54,15 @@ fn main() {
         }
 
         // Generating the day as an obj
-        let day_of_month = time::DayOfMonth{day      : day, hr       : 12, min      : 0, sec      : 0.0, time_zone: 0.0};
-        let date = time::Date{year       : year, month      : month, decimal_day: time::decimal_day(&day_of_month), cal_type   : time::CalType::Gregorian};
+        let day_of_month = time::DayOfMonth{day: day, hr: 12, min: 0, sec: 0.0, time_zone: 0.0};
+        let date = time::Date{year: year, month: month, decimal_day: time::decimal_day(&day_of_month), cal_type: time::CalType::Gregorian};
 
         // Getting the Julian Date and letting the user know thats the date
         let julian_day = time::julian_day(&date);
         println!("\n\nYour me date is: {}\n\n", julian_day);
 
         // Ask if the user want to go again
-        print!("So erm, kind of awkward but, do you want to go again? Y/n                  ");
+        print!("So erm, kind of awkward but, do you want to go again? Y/n               ");
         io::stdout().flush().unwrap();
         let mut input = String::new();
         io::stdin().read_line(&mut input).unwrap();
